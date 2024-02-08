@@ -2,7 +2,7 @@ import requests
 import re
 
 def validate_phone_number(phone_number):
-    pattern = r'^\d{11}$'
+    pattern = r'^79\d{9}$'
     return bool(re.match(pattern, phone_number))
 
 user='python24'
@@ -14,7 +14,7 @@ text='Hello world!'
 if not validate_phone_number(receiver):
     print("Ошибка! Некорректный номер телефона")
 else:
-    url = f"https://my3.webcom.mobi/sendsms.php?user={user}&pwd={password}&sadr={sender}&dadr={receiver}&text={text}"
+    url = f"https://my3.webcom.mob/sendsms.php?user={user}&pwd={password}&sadr={sender}&dadr={receiver}&text={text}"
     print(url)
     try:
         response = requests.get(url)
